@@ -72,9 +72,15 @@ directory_name(){
   echo "%{$fg_bold[cyan]%}%1/%\/%{$reset_color%}"
 }
 
-export PROMPT=$'\n$(rvm_prompt) in $(directory_name) $(git_dirty)$(need_push)\n› '
+project_pwd() {
+  echo $PWD | sed -e "s/\/Users\/$USER/~/" -e "s/~\/projects\/\([^\/]*\)\/current/\\1/" -e "s/~\/Sites\/\([^\/]*\)\/current/http:\/\/\\1/"
+}
+
+export PROMPT=$'%{\e[0;31m%}%n@%m%{\e[0m%}
+%{\e[0;%(?.32.31)m%}>%{\e[0m%} '
+
 set_prompt () {
-  export RPROMPT="%{$fg_bold[cyan]%}$(todo)%{$reset_color%}"
+  export RPROMPT=$'%{\e[0;32m%}$(project_pwd)$(git-cmd-info)%{\e[0m%}'
 }
 
 precmd() {
