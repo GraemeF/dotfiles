@@ -61,8 +61,8 @@ set shortmess=filtIoOA     " shorten messages
 set report=0               " tell us about changes
 set nostartofline          " don't jump to the start of line when scrolling
 set guifont=Monaco:h14
-set columns=118
-set lines=34
+" set columns=118
+" set lines=34
 
 " ----------------------------------------------------------------------------
 " Visual Cues
