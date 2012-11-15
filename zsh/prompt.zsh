@@ -28,7 +28,7 @@ git_prompt_info () {
 }
 
 unpushed () {
-  /usr/bin/git cherry -v origin/$(git_branch) 2>/dev/null
+  /usr/bin/git cherry -v @{upstream} 2>/dev/null
 }
 
 need_push () {
@@ -40,10 +40,10 @@ need_push () {
   fi
 }
 
-rvm_prompt(){
-  if $(which rvm &> /dev/null)
+rb_prompt(){
+  if $(which rbenv &> /dev/null)
   then
-	  echo "%{$fg_bold[yellow]%}$(rvm tools identifier)%{$reset_color%}"
+	  echo "%{$fg_bold[yellow]%}$(rbenv version | awk '{print $1}')%{$reset_color%}"
 	else
 	  echo ""
   fi
@@ -72,13 +72,7 @@ directory_name(){
   echo "%{$fg_bold[cyan]%}%1/%\/%{$reset_color%}"
 }
 
-project_pwd() {
-  echo $PWD | sed -e "s/\/Users\/$USER/~/" -e "s/~\/projects\/\([^\/]*\)\/current/\\1/" -e "s/~\/Sites\/\([^\/]*\)\/current/http:\/\/\\1/"
-}
-
-export PROMPT=$'%{\e[0;31m%}%n@%m%{\e[0m%}
-%{\e[0;%(?.32.31)m%}>%{\e[0m%} '
-
+export PROMPT=$'\n$(rb_prompt) in $(directory_name) $(git_dirty)$(need_push)\n› '
 set_prompt () {
   export RPROMPT=$'%{\e[0;32m%}$(project_pwd)$(git-cmd-info)%{\e[0m%}'
 }
