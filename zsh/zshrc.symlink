@@ -60,4 +60,4 @@ compinit
 for config_file ($ZSH/**/completion.zsh) source $config_file
 
 . ~/Development/Tools/nvm/nvm.sh
-nvm use 0.8.14
+nvm use 0.8
