@@ -29,12 +29,12 @@ ZSH_THEME="random"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git)
-
-source $ZSH/oh-my-zsh.sh
+plugins=(git git-flow git-hubflow npm osx)
 
 # Customize to your needs...
 export PATH=./bin:/Users/graemef/.rbenv/shims:/usr/local/bin:/usr/local/sbin:/Users/graemef/.sfs:/Users/graemef/.dotfiles/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin
+
+source $ZSH/oh-my-zsh.sh
 
 # shortcut to this dotfiles path is $ZSH
 export ZSH=$HOME/.dotfiles
