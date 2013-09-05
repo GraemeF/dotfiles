@@ -4,6 +4,8 @@ else
   export PS1='%3~$(git_info_for_prompt)%# '
 fi
 
+export JAVA_HOME=`/usr/libexec/java_home -v 1.6`
+
 export LSCOLORS="exfxcxdxbxegedabagacad"
 export CLICOLOR=true
 

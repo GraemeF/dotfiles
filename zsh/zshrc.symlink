@@ -33,6 +33,9 @@ plugins=(git git-flow git-hubflow npm osx)
 
 # Customize to your needs...
 export PATH=./bin:/Users/graemef/.rbenv/shims:/usr/local/bin:/usr/local/sbin:/Users/graemef/.sfs:/Users/graemef/.dotfiles/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin
+RUBY_BINDIR=`brew info ruby|grep /bin|tr -d ' '`
+export PATH=$RUBY_BINDIR:$PATH
+export PKG_CONFIG_PATH=$PKG_CONFIG_PATH:/opt/X11/lib/pkgconfig
 
 source $ZSH/oh-my-zsh.sh
 
@@ -60,4 +63,4 @@ compinit
 for config_file ($ZSH/**/completion.zsh) source $config_file
 
 . ~/Development/Tools/nvm/nvm.sh
-nvm use 0.8
+nvm use 0.10
