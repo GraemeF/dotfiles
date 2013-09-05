@@ -16,3 +16,6 @@
 [submodule "vim/vim.symlink/bundle/puppet"]
 	path = vim/vim.symlink/bundle/puppet
 	url = https://github.com/rodjek/vim-puppet.git
+[submodule "vim/vim.symlink/bundle/vim-thrift"]
+	path = vim/vim.symlink/bundle/vim-thrift
+	url = https://github.com/jigish/vim-thrift.git

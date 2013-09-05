@@ -105,3 +105,7 @@ set wildignore+=*/tmp/*,*.so,*.swp,*.zip,node_modules
 
 " treat .json files as javascript
 autocmd BufNewFile,BufRead *.json set ft=javascript
+
+" thrift syntax
+au BufRead,BufNewFile *.thrift set filetype=thrift
+au! Syntax thrift source ~/.vim/bundle/vim-thrift/syntax/thrift.vim
