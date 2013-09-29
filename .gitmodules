@@ -34,3 +34,6 @@
 [submodule "vim/vim.symlink/bundle/rainbow_parentheses"]
 	path = vim/vim.symlink/bundle/rainbow_parentheses
 	url = https://github.com/kien/rainbow_parentheses.vim.git
+[submodule "vim/vim.symlink/bundle/vim-redl"]
+	path = vim/vim.symlink/bundle/vim-redl
+	url = git://github.com/dgrnbrg/vim-redl.git
